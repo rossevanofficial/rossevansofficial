@@ -1,511 +1,417 @@
-:root{
-  --bg:#0b0f19;
-  --panel: rgba(255,255,255,.06);
-  --panel2: rgba(255,255,255,.09);
-  --text:#e9eefc;
-  --muted: rgba(233,238,252,.72);
-  --line: rgba(255,255,255,.14);
-  --shadow: 0 18px 60px rgba(0,0,0,.45);
-  --radius: 18px;
-  --radius2: 26px;
-  --max: 1120px;
-  --focus: 0 0 0 3px rgba(120,170,255,.35);
-}
+Here is the code <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(1000px 700px at 20% -10%, rgba(120,170,255,.18), transparent 55%),
-              radial-gradient(900px 600px at 90% 0%, rgba(255,120,190,.12), transparent 60%),
-              var(--bg);
-  color:var(--text);
-  line-height:1.5;
-}
+  <title>Ross Evans — Official Author Website</title>
+  <meta name="description" content="Official website of author Ross Evans. Explore books, series updates, behind-the-scenes notes, and ways to connect." />
+  <meta name="theme-color" content="#0b0f19" />
 
-a{ color:inherit; text-decoration:none; }
-a:hover{ text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); }
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rossevansofficial.com/" />
 
-img{ max-width:100%; display:block; }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ross Evans — Official Author Website" />
+  <meta property="og:description" content="Explore books, series updates, behind-the-scenes notes, and ways to connect." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rossevansofficial.com/" />
+  <meta property="og:image" content="https://rossevansofficial.com/assets/og-image.jpg" />
 
-.container{
-  width: min(var(--max), calc(100% - 40px));
-  margin: 0 auto;
-}
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
 
-.skip{
-  position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-}
-.skip:focus{
-  left:12px; top:12px; width:auto; height:auto;
-  padding:10px 12px;
-  background: rgba(0,0,0,.7);
-  border:1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  outline:none;
-}
+  <!-- Favicons (optional) -->
+  <link rel="icon" href="assets/favicon.png" />
 
-.header{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(14px);
-  background: rgba(11,15,25,.55);
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
-.header__inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 12px 0;
-  gap: 14px;
-}
+  <link rel="stylesheet" href="web.css" />
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-}
-.brand__mark{
-  width: 38px; height: 38px;
-  display:grid; place-items:center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(120,170,255,.28), rgba(255,120,190,.22));
-  border: 1px solid rgba(255,255,255,.16);
-  box-shadow: 0 10px 40px rgba(0,0,0,.25);
-  font-weight: 800;
-  letter-spacing:.5px;
-}
-.brand__text{ display:flex; flex-direction:column; line-height:1.1; }
-.brand__text small{ color: var(--muted); font-size: 12px; margin-top: 2px; }
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap: 18px;
-}
-.nav a{ color: var(--muted); font-weight: 600; font-size: 14px; }
-.nav a:hover{ color: var(--text); text-decoration:none; }
-
-.navToggle{
-  display:none;
-  width: 42px; height: 40px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-}
-.navToggle span{
-  display:block;
-  width: 18px; height: 2px;
-  background: rgba(233,238,252,.85);
-  margin: 4px auto;
-  border-radius: 99px;
-}
-
-.hero{
-  position: relative;
-  padding: 54px 0 24px;
-}
-.hero__grid{
-  display:grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 24px;
-  align-items: start;
-}
-.hero__copy{ padding-top: 14px; }
-.kicker{
-  display:inline-block;
-  padding: 8px 12px;
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 999px;
-  background: rgba(255,255,255,.04);
-  color: var(--muted);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing:.4px;
-}
-h1{
-  margin: 14px 0 12px;
-  font-size: clamp(32px, 4vw, 50px);
-  line-height:1.06;
-  letter-spacing: -0.6px;
-}
-.lead{
-  margin: 0 0 16px;
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 62ch;
-}
-.hero__cta{ display:flex; gap: 12px; flex-wrap:wrap; margin-top: 16px; }
-.hero__badges{
-  display:flex; gap:10px; flex-wrap:wrap;
-  margin-top: 18px;
-}
-.badge{
-  font-size: 12px;
-  color: rgba(233,238,252,.78);
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-
-.hero__fade{
-  position:absolute; inset:auto 0 0 0; height: 90px;
-  background: linear-gradient(to bottom, transparent, rgba(11,15,25,1));
-  pointer-events:none;
-}
-
-.section{
-  padding: 38px 0;
-}
-.section__head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-.section__head h2{ margin:0; font-size: 26px; letter-spacing:-.3px; }
-.muted{ color: var(--muted); }
-
-.grid{
-  display:grid;
-  gap: 16px;
-}
-.grid--books{
-  grid-template-columns: repeat(3, 1fr);
-}
-.grid--about{
-  grid-template-columns: 1fr 1fr;
-}
-.grid--newsletter{
-  grid-template-columns: 1.1fr .9fr;
-  align-items: start;
-}
-.grid--contact{
-  grid-template-columns: 1.1fr .9fr;
-  align-items: start;
-}
-
-.card{
-  background: var(--panel);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--radius2);
-  box-shadow: 0 14px 46px rgba(0,0,0,.28);
-  padding: 18px;
-}
-.card--subtle{
-  background: rgba(255,255,255,.04);
-  box-shadow:none;
-}
-.card--glow{
-  background:
-    radial-gradient(800px 420px at 10% 0%, rgba(120,170,255,.18), transparent 60%),
-    radial-gradient(700px 420px at 100% 0%, rgba(255,120,190,.14), transparent 62%),
-    rgba(255,255,255,.06);
-}
-
-.card__top{
-  display:flex; gap: 14px; align-items:center;
-}
-.card__title{ margin:0; font-size: 16px; }
-.card__sub{ margin: 4px 0 0; color: var(--muted); font-size: 13px; }
-
-.avatar{
-  width: 56px; height: 56px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.04);
-  overflow:hidden;
-  position:relative;
-  flex: 0 0 auto;
-}
-.avatar img{ width:100%; height:100%; object-fit:cover; }
-.avatar__fallback{
-  position:absolute; inset:0;
-  display:grid; place-items:center;
-  font-weight: 900;
-  color: rgba(233,238,252,.88);
-}
-.avatar--fallback .avatar__fallback{ display:grid; }
-
-.readingList{
-  margin: 14px 0 0;
-  padding-left: 18px;
-  color: rgba(233,238,252,.86);
-}
-.readingList li{ margin: 8px 0; }
-.fineprint{
-  margin: 12px 0 0;
-  font-size: 12px;
-  color: rgba(233,238,252,.62);
-}
-
-.book{
-  display:flex;
-  flex-direction:column;
-  padding: 14px;
-}
-.book__cover{
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  overflow:hidden;
-  aspect-ratio: 3 / 4;
-  display:grid;
-  place-items:center;
-}
-.cover__fallback{
-  color: rgba(233,238,252,.55);
-  font-weight: 800;
-  letter-spacing:.5px;
-}
-.cover--fallback{ display:grid; place-items:center; }
-.book__body{ padding-top: 12px; }
-.book__body h3{ margin: 0 0 6px; }
-.book__links{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 12px; }
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 8px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(233,238,252,.92);
-  color: #0b0f19;
-  font-weight: 800;
-  font-size: 14px;
-  cursor:pointer;
-  text-decoration:none;
-  transition: transform .08s ease, background .12s ease;
-}
-.btn:hover{ transform: translateY(-1px); text-decoration:none; }
-.btn:focus{ outline:none; box-shadow: var(--focus); }
-
-.btn--ghost{
-  background: rgba(255,255,255,.06);
-  color: var(--text);
-}
-.btn--sm{
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 13px;
-}
-
-.list{
-  margin: 10px 0 0;
-  padding-left: 18px;
-  color: rgba(233,238,252,.84);
-}
-.list li{ margin: 8px 0; }
-
-.newsletterBox{ display:flex; flex-direction:column; gap: 10px; }
-.hr{
-  width: 100%;
-  border: none;
-  border-top: 1px solid rgba(255,255,255,.12);
-  margin: 8px 0;
-}
-
-.form{
-  display:flex;
-  flex-direction:column;
-  gap: 12px;
-}
-label{
-  display:flex;
-  flex-direction:column;
-  gap: 6px;
-  font-weight: 700;
-  font-size: 13px;
-  color: rgba(233,238,252,.86);
-}
-input, textarea{
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  padding: 12px 12px;
-  color: var(--text);
-  font-size: 14px;
-}
-input:focus, textarea:focus{
-  outline:none;
-  box-shadow: var(--focus);
-  border-color: rgba(120,170,255,.45);
-}
-.form__row{
-  display:flex;
-  gap: 10px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-.links{
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-}
-.links a{
-  padding: 10px 12px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  color: rgba(233,238,252,.82);
-}
-.links a:hover{
-  color: var(--text);
-  text-decoration:none;
-  background: rgba(255,255,255,.06);
-}
-
-.divider{
-  height: 1px;
-  background: rgba(255,255,255,.12);
-  margin: 16px 0;
-}
-
-.footer{
-  padding: 28px 0 40px;
-  border-top: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.12);
-}
-.footer__inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  flex-wrap:wrap;
-}
-.footer__links{ display:flex; gap: 14px; color: rgba(233,238,252,.70); }
-
-.modal{
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 18px;
-  background: rgba(15,20,34,.95);
-  color: var(--text);
-  box-shadow: var(--shadow);
-  padding: 0;
-}
-.modal::backdrop{
-  background: rgba(0,0,0,.55);
-}
-.modal__box{ padding: 18px; width: min(560px, calc(100vw - 40px)); }
-
-/* Responsive */
-@media (max-width: 980px){
-  .hero__grid{ grid-template-columns: 1fr; }
-  .grid--books{ grid-template-columns: 1fr; }
-  .grid--about, .grid--newsletter, .grid--contact{ grid-template-columns: 1fr; }
-  .section__head{ flex-direction:column; align-items:flex-start; }
-  .nav{ display:none; }
-  .navToggle{ display:block; }
-  .nav.isOpen{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    gap: 12px;
-    position:absolute;
-    right: 20px;
-    top: 64px;
-    padding: 14px;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(11,15,25,.92);
-    box-shadow: var(--shadow);
-    width: min(260px, calc(100vw - 40px));
+  <!-- Simple schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Ross Evans",
+    "url":"https://rossevansofficial.com",
+    "jobTitle":"Author",
+    "sameAs":[
+      "https://www.amazon.com/",
+      "https://www.goodreads.com/"
+    ]
   }
-}.book-status{
-  display: inline-block;
-  margin: 0.35rem 0 0.65rem 0;
-  padding: 0.35rem 0.8rem;
-  border: 1px solid rgba(214,181,106,0.45);
-  border-radius: 999px;
-  color: #d6b56a;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.section--reviews{
-  position: relative;
-}
+  </script>
+  
+ <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){
+      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
+      l=d.createElement(e);l.async=1;l.src=u;
+      n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2004237');
+  </script>
+  <!-- End MailerLite Universal -->
+  
+</head>
 
-.grid--reviews{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
+<body>
+  <a class="skip" href="#main">Skip to content</a>
 
-.review{
-  position: relative;
-  overflow: hidden;
-}
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Ross Evans Official">
+        <span class="brand__mark">RE</span>
+        <span class="brand__text">
+          <strong>Ross Evans</strong>
+          <small>Official</small>
+        </span>
+      </a>
 
-.review::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 1.5rem;
-  width: 64px;
-  height: 2px;
-  background: #d6b56a;
-  opacity: 0.9;
-}
+      <button class="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
 
-.review__text{
-  margin: 0 0 1rem 0;
-  line-height: 1.75;
-  color: #e8e8e8;
-  font-size: 1rem;
-}
+      <nav class="nav" id="nav">
+        <a href="#books">Books</a>
+        <a href="#about">About</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn--sm btn--ghost" href="#books">Start Here</a>
+      </nav>
+    </div>
+  </header>
 
-.review__source{
-  margin: 0;
-  color: #d6b56a;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.grid--books{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
-  align-items: start;
-}
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">Epic Fantasy • Sci-Fantasy • Multiverse</p>
+          <h1>Stories where worlds collide and purpose is forged by trials and choices.</h1>
+          <p class="lead">
+            Welcome to the official home of <strong>Ross Evans</strong>.
+            Explore the <em>Trading Existence</em> universe, get updates on new releases,
+            and grab bonus content.
+          </p>
 
-.book{
-  height: 100%;
-}
+          <div class="hero__cta">
+            <a class="btn" href="#books">Explore the Books</a>
+            <a class="btn btn--ghost" href="#newsletter">Get Updates</a>
+          </div>
 
-.book__cover{
-  width: 100%;
-}
+          <div class="hero__badges">
+            
+          </div>
+        </div>
 
-.book__cover img{
-  display: block;
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-.grid--books{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
-  align-items: start;
-}
+        <div class="hero__card">
+          <div class="card card--glow">
+            <div class="card__top">
+              <div class="avatar">
+                <!-- Replace with your headshot if you want -->
+                <img src="assets/headshot.jpg" alt="Ross Evans" onerror="this.style.display='none'; this.parentElement.classList.add('avatar--fallback');" />
+                <div class="avatar__fallback" aria-hidden="true">RE</div>
+              </div>
+              <div>
+                <h2 class="card__title">Available books</h2>
+                <p class="card__sub"></p>
+              </div>
+            </div>
 
-.book__cover img{
-  display: block;
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 12px;
-}
+            <ol class="readingList">
+              <li>
+                <strong>Trading Existence: Awakening</strong>
+                <span class="muted"></span>
+              </li>
+              <li>
+                <strong>Coming Soon Redemption</strong>
+                <span class="muted"></span>
+              </li>
+              <li>
+                <strong>Coming Late 2026 </strong>
+                <span class="muted"></span>
+              </li>
+            </ol>
+
+            <div class="card__actions">
+              <a class="btn btn--sm" href="#books">Where to Buy</a>
+              <a class="btn btn--sm btn--ghost" href="#contact">Press / Inquiries</a>
+            </div>
+
+            <p class="fineprint">
+              Want a free sample chapter + bonus lore? Join the newsletter below.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- BOOKS -->
+    <section class="section" id="books">
+      <div class="container">
+        <div class="section__head">
+          <h2>Books</h2>
+          <p class="muted"></p>
+        </div>
+
+        <div class="grid grid--books">
+          <!-- BOOK 1 -->
+          <article class="book card">
+           <div class="book__cover">
+  <a href="https://tradingexistence.com" target="_blank" rel="noopener">
+    <img
+      src="assets/Trading Existence Cover lg white.png"
+      alt="Trading Existence: Awakening cover"
+      onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
+    />
+  </a>
+  <div class="cover__fallback" aria-hidden="true">Book 1 Cover</div>
+</div>
+            <div class="book__body">
+              <h3>Trading Existence: Awakening</h3>
+              <p class="muted">Book 1 • Epic sci-fantasy</p>
+              <p>
+                A collision of worlds. A legacy of power. And a fight to decide who gets to exist when reality fractures.
+              </p>
+              <div class="book__links">
+                <a class="btn btn--sm" href="https://a.co/d/dh08l4d" target="_blank" rel="noopener">Amazon</a>
+                <a class="btn btn--sm btn--ghost" href="#" target="_blank" rel="noopener">Goodreads</a>
+              </div>
+            </div>
+          </article>
+
+         
+      <!-- BOOK 2 -->
+<article class="book card">
+  <div class="book__cover">
+    <a href="https://rossevanofficial.github.io/redemption/" rel="noopener">
+      <img
+        src="assets/Redemption Book Cover (2).png"
+        alt="Redemption cover"
+        onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
+      />
+    </a>
+    <div class="cover__fallback" aria-hidden="true">Book 2 Cover</div>
+  </div>
+
+  <div class="book__body">
+    <h3>Redemption</h3>
+    <p class="muted">New Series • Epic fantasy / Dark-Fantasy</p>
+    <p>
+      Marked by fire and bound by fate, Freya stands at the center of a broken balance. 
+      Hunted by the past and watched by forces beyond her world.
+    </p>
+
+    <div class="book__links">
+      <a class="btn btn--sm btn--ghost" href="#newsletter">Get Updates</a>
+      <a class="btn btn--sm" href="redemption.html">Details</a>
+    </div>
+  </div>
+</article>
+
+
+
+     <!-- BOOK 3 -->
+<article class="book card">
+  <div class="book__cover">
+    <a href="#newsletter" rel="noopener">
+      <img
+        src="assets/covers/Trading-Existence-Fractured-Realms.png"
+        alt="Trading Existence: Fractured Realms cover"
+        onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
+      />
+    </a>
+    <div class="cover__fallback" aria-hidden="true">Book 3 Cover</div>
+  </div>
+
+  <div class="book__body">
+    <h3>Trading Existence: Fractured Realms</h3>
+    <p class="muted">Book 3 • Coming 2026</p>
+    <p>
+      The war between creation and destruction has begun again.
+
+With the Veil fracturing and ancient magic returning, Ross Evans must lead a desperate journey into the frozen north to stop Chron from reclaiming the power of the First. But the balance awakening in the world is awakening inside Ross as well.
+    </p>
+    <div class="book__links">
+      <a class="btn btn--sm btn--ghost" href="#newsletter">Notify me</a>
+    </div>
+  </div>
+</article>
+        </div>
+
+        <div class="note card card--subtle">
+          <h3>Want a one-page “Start Here”?</h3>
+          <p class="muted">
+          dedicated landing section for ads: hook, 3 bullets, reviews, and buy buttons.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>About Ross</h2>
+          <p class="muted"></p>
+        </div>
+
+        <div class="grid grid--about">
+          <div class="card">
+            <h3>Short Bio</h3>
+            <p>
+              Ross Evans writes epic fantasy and sci-fantasy stories built on high stakes, fractured realities,
+              and characters forced to choose who they become when everything breaks.
+            </p>
+            <p class="muted">
+              
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Quick Facts</h3>
+            <ul class="list">
+              <li><strong>Genres:</strong> Epic fantasy, sci-fantasy</li>
+              <li><strong>Series:</strong> Trading Existence</li>
+              <li><strong>For inquiries:</strong> Use the contact form below</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section" id="newsletter">
+      <div class="container">
+        <div class="section__head">
+          <h2>Newsletter</h2>
+          <p class="muted">Get release alerts + bonus content. No spam.</p>
+        </div>
+
+        <div class="card card--glow">
+          <div class="grid grid--newsletter">
+            <div>
+              <h3>Get the next update</h3>
+              <p class="muted">
+                Add your signup link below (Mailchimp / ConvertKit / Buttondown).
+                If you want, I’ll wire this to your exact provider.
+              </p>
+              <ul class="list">
+                <li>New releases + preorder links</li>
+                <li>Behind-the-scenes notes</li>
+                <li>Bonus scenes / lore drops</li>
+              </ul>
+            </div>
+
+            <!-- OPTION A: Link button (simplest, no form handling) -->
+            <div class="newsletterBox">
+              <p class="muted">Option A (recommended): link to your signup page</p>
+              <a class="btn" href="#" target="_blank" rel="noopener">Join the Newsletter</a>
+
+              <hr class="hr" />
+
+              <!-- OPTION B: Simple form (needs Formspree or provider embed) -->
+              <p class="muted">Option B: basic form (wire to Formspree / provider embed)</p>
+              <form class="form" id="newsletterForm" action="#" method="post">
+                <label>
+                  Email
+                  <input name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+                </label>
+                <button class="btn" type="submit">Sign Up</button>
+                <p class="fineprint" id="newsletterMsg" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p class="muted"></p>
+        </div>
+
+        <div class="grid grid--contact">
+          <div class="card">
+            <h3>Send a message</h3>
+
+            <!-- Option A: mailto fallback (works anywhere) -->
+            <form class="form" id="contactForm">
+              <label>
+                Name
+                <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
+              </label>
+
+              <div class="form__row">
+                <button class="btn" type="submit">Send</button>
+                <a class="btn btn--ghost" href="mailto:info@rossevansofficial.com">Email directly</a>
+              </div>
+
+              <p class="fineprint" id="contactMsg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Links</h3>
+            <div class="links">
+              <a href="https://www.amazon.com/stores/Ross-Evans/author/B0G4JBNWC1?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=78cbca2f-8a8c-4a55-b144-24e5eef1be21" target="_blank" rel="noopener">Amazon Author Page</a>
+              <a href="#" target="_blank" rel="noopener">Goodreads</a>
+              <a href="https://www.instagram.com/trading_existence/" target="_blank" rel="noopener">Instagram</a>
+              <a href="#" target="_blank" rel="noopener">TikTok</a>
+              <a href="#" target="_blank" rel="noopener">YouTube</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Press</h3>
+            <p class="muted">
+              Need a headshot, bio, book covers, or a short statement for an article/podcast?
+              Use the form and put “Press” in the subject line.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Ross Evans. All rights reserved.</p>
+      <div class="footer__links">
+        <a href="#top">Back to top</a>
+        <a href="#" id="privacyLink">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple privacy modal -->
+  <dialog class="modal" id="privacyModal">
+    <div class="modal__box">
+      <h3>Privacy</h3>
+      <p class="muted">
+        This site uses no tracking by default. If you add newsletter/signup providers,
+        they may collect email addresses for delivery of updates.
+      </p>
+      <form method="dialog">
+        <button class="btn btn--sm">Close</button>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="web.js"></script>
+</body>
+</html>
