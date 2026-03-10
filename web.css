@@ -432,3 +432,44 @@ input:focus, textarea:focus{
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+.section--reviews{
+  position: relative;
+}
+
+.grid--reviews{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.review{
+  position: relative;
+  overflow: hidden;
+}
+
+.review::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  width: 64px;
+  height: 2px;
+  background: #d6b56a;
+  opacity: 0.9;
+}
+
+.review__text{
+  margin: 0 0 1rem 0;
+  line-height: 1.75;
+  color: #e8e8e8;
+  font-size: 1rem;
+}
+
+.review__source{
+  margin: 0;
+  color: #d6b56a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
