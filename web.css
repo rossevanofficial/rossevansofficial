@@ -420,4 +420,15 @@ input:focus, textarea:focus{
     box-shadow: var(--shadow);
     width: min(260px, calc(100vw - 40px));
   }
+}.book-status{
+  display: inline-block;
+  margin: 0.35rem 0 0.65rem 0;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(214,181,106,0.45);
+  border-radius: 999px;
+  color: #d6b56a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
