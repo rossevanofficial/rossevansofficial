@@ -380,27 +380,34 @@
           <div class="card">
             <h3>Send a message</h3>
 
-            <form class="form" id="contactForm">
-              <label>
-                Name
-                <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
-              </label>
-              <label>
-                Email
-                <input name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-              </label>
-              <label>
-                Message
-                <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
-              </label>
+            <form
+  class="form"
+  action="https://formspree.io/f/xreyqqjd"
+  method="POST"
+>
 
-              <div class="form__row">
-                <button class="btn" type="submit">Send</button>
-                <a class="btn btn--ghost" href="mailto:info@rossevansofficial.com">Email directly</a>
-              </div>
+<label>
+Name
+<input name="name" type="text" required>
+</label>
 
-              <p class="fineprint" id="contactMsg" role="status" aria-live="polite"></p>
-            </form>
+<label>
+Email
+<input name="email" type="email" required>
+</label>
+
+<label>
+Message
+<textarea name="message" rows="6" required></textarea>
+</label>
+
+<input type="hidden" name="_subject" value="New message from RossEvansOfficial.com">
+
+<button class="btn" type="submit">
+Send Message
+</button>
+
+</form>
           </div>
 
           <div class="card">
