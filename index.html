@@ -48,17 +48,6 @@
     ]
   }
   </script>
-
-  <!-- MailerLite Universal -->
-  <script>
-    (function(w,d,e,u,f,l,n){
-      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-      l=d.createElement(e);l.async=1;l.src=u;
-      n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
-    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2004237');
-  </script>
-  <!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -332,41 +321,45 @@
     </section>
 
     <!-- NEWSLETTER -->
-   <section class="section" id="newsletter">
-  <div class="container">
-    <div class="section__head">
-      <h2>Newsletter</h2>
-      <p class="muted">Get release alerts + bonus content. No spam.</p>
-    </div>
-
-    <div class="card card--glow">
-      <div class="grid grid--newsletter">
-
-        <div>
-          <h3>Get the next update</h3>
-          <p class="muted">
-            Join the mailing list for new releases, behind-the-scenes notes, and bonus content.
-          </p>
-
-          <ul class="list">
-            <li>New releases + preorder links</li>
-            <li>Behind-the-scenes notes</li>
-            <li>Bonus scenes / lore drops</li>
-          </ul>
+    <section class="section" id="newsletter">
+      <div class="container">
+        <div class="section__head">
+          <h2>Newsletter</h2>
+          <p class="muted">Get release alerts + bonus content. No spam.</p>
         </div>
 
-        <div class="newsletterBox">
+        <div class="card card--glow">
+          <div class="grid grid--newsletter">
+            <div>
+              <h3>Get the next update</h3>
+              <p class="muted">
+                Join the mailing list for new releases, behind-the-scenes notes, and bonus content.
+              </p>
 
-          <p class="muted">Sign up below</p>
+              <ul class="list">
+                <li>New releases + preorder links</li>
+                <li>Behind-the-scenes notes</li>
+                <li>Bonus scenes / lore drops</li>
+              </ul>
+            </div>
 
-          <div class="ml-embedded" data-form="mfi3nP"></div>
+            <div class="newsletterBox">
+              <p class="muted">Sign up below</p>
 
+              <div
+                class="ml-embedded"
+                data-form="mfi3nP"
+                style="width: 100%; min-height: 160px;"
+              ></div>
+
+              <noscript>
+                <p class="muted">Please enable JavaScript to load the newsletter signup form.</p>
+              </noscript>
+            </div>
+          </div>
         </div>
-
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CONTACT -->
     <section class="section" id="contact">
@@ -380,38 +373,36 @@
           <div class="card">
             <h3>Send a message</h3>
             <p class="muted">
-  Press or media request? Need a headshot, bio, book covers, or a short statement
-  for an article or podcast? Use the form below and put <strong>Press</strong> in the subject line.
-  </p>
+              Press or media request? Need a headshot, bio, book covers, or a short statement
+              for an article or podcast? Use the form below and put <strong>Press</strong> in the subject line.
+            </p>
 
             <form
-  class="form"
-  action="https://formspree.io/f/xreyqqjd"
-  method="POST"
->
+              class="form"
+              action="https://formspree.io/f/xreyqqjd"
+              method="POST"
+            >
+              <label>
+                Name
+                <input name="name" type="text" required>
+              </label>
 
-<label>
-Name
-<input name="name" type="text" required>
-</label>
+              <label>
+                Email
+                <input name="email" type="email" required>
+              </label>
 
-<label>
-Email
-<input name="email" type="email" required>
-</label>
+              <label>
+                Message
+                <textarea name="message" rows="6" required></textarea>
+              </label>
 
-<label>
-Message
-<textarea name="message" rows="6" required></textarea>
-</label>
+              <input type="hidden" name="_subject" value="New message from RossEvansOfficial.com">
 
-<input type="hidden" name="_subject" value="New message from RossEvansOfficial.com">
-
-<button class="btn" type="submit">
-Send Message
-</button>
-
-</form>
+              <button class="btn" type="submit">
+                Send Message
+              </button>
+            </form>
           </div>
 
           <div class="card">
@@ -442,8 +433,7 @@ Send Message
             <div class="divider"></div>
 
             <h3>Press</h3>
-            <p class="muted">
-              </p>
+            <p class="muted"></p>
           </div>
         </div>
       </div>
@@ -479,5 +469,19 @@ Send Message
   </dialog>
 
   <script src="web.js"></script>
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){
+      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
+      l=d.createElement(e);
+      l.async=1;
+      l.src=u;
+      n=d.getElementsByTagName(e)[0];
+      n.parentNode.insertBefore(l,n);
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2004237');
+  </script>
+  <!-- End MailerLite Universal -->
 </body>
 </html>
