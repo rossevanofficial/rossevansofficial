@@ -857,3 +857,45 @@ input:focus, textarea:focus{
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+.newsletterBox{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ml-embedded{
+  width: 100%;
+  min-height: 180px;
+  display: block;
+}
+
+.ml-embedded iframe{
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 0;
+  display: block;
+  background: transparent;
+  border-radius: 14px;
+}
+
+/* Optional: review grid fix to match your HTML */
+.grid--reviews{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.review__text{
+  margin: 0 0 1rem 0;
+  line-height: 1.75;
+  color: #e8e8e8;
+}
+
+.review__source{
+  margin: 0;
+  color: #d6b56a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
