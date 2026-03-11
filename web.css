@@ -800,6 +800,7 @@ input:focus, textarea:focus{
 
 /* Responsive */
 @media (max-width: 980px){
+  .reviews-grid{ grid-template-columns: 1fr; }
   .hero__grid{ grid-template-columns: 1fr; }
   .grid--books{ grid-template-columns: 1fr; }
   .grid--about, .grid--newsletter, .grid--contact{ grid-template-columns: 1fr; }
@@ -830,6 +831,28 @@ input:focus, textarea:focus{
   border-radius: 999px;
   color: #d6b56a;
   font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.reviews-grid{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.review-card{
+  position: relative;
+}
+
+.review-text{
+  margin: 0 0 1rem 0;
+  line-height: 1.75;
+  color: #e8e8e8;
+}
+
+.review-source{
+  margin: 0;
+  color: #d6b56a;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
