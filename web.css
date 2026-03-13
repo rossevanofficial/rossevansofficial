@@ -1556,16 +1556,18 @@ input[type="submit"],
   cursor: pointer;
 }
 
-button:active,
-input[type="submit"]:active,
-.btn:active {
-  transform: translateY(1px);
+button,
+input[type="submit"],
+.btn {
+  cursor: pointer;
 }
+
 button:active,
 input[type="submit"]:active,
 .btn:active {
   transform: translateY(2px);
   transition: transform 0.05s;
+}
   /* =============================== */
 /* MailerLite Dark Theme Styling */
 /* =============================== */
@@ -1632,5 +1634,20 @@ input[type="submit"]:active,
 .ml-embedded input[type="submit"]:active {
   transform: translateY(1px) !important;
 }
+.grid--newsletter,
+.newsletterBox,
+.ml-embedded {
+  position: relative;
+  z-index: 5;
+}
 
+.ml-embedded iframe,
+.ml-embedded form,
+.ml-embedded button,
+.ml-embedded input,
+.ml-embedded input[type="submit"] {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto !important;
+}
   
