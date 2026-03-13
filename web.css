@@ -199,8 +199,7 @@ h1 {
   font-size: 16px;
   max-width: 62ch;
 }
-
-.hero__cta {
+ {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
