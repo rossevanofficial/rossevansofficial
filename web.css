@@ -601,15 +601,17 @@ textarea:focus {
 /* MailerLite embed */
 .ml-embedded {
   width: 100%;
-  min-height: 180px;
+  min-height: 240px;
   display: block;
+  position: relative;
+  z-index: 3;
   background: transparent !important;
 }
 
 .ml-embedded iframe {
   width: 100% !important;
   max-width: 100% !important;
-  min-height: 180px;
+  min-height: 240px;
   border: 0 !important;
   display: block;
   background: transparent;
@@ -723,38 +725,25 @@ input[type="submit"]:active,
     box-shadow: var(--shadow);
     width: min(260px, calc(100vw - 40px));
   }
+  .grid--newsletter > div {
+  min-width: 0;
 }
-/* Newsletter click-fix */
-#newsletter,
-#newsletter .container,
-#newsletter .card,
-#newsletter .grid,
-#newsletter .newsletterBox,
-#newsletter .ml-embedded {
+
+.newsletterBox {
   position: relative;
+  z-index: 2;
 }
 
-#newsletter .newsletterBox,
-#newsletter .ml-embedded,
-#newsletter .ml-embedded iframe {
-  z-index: 50;
-}
-
-#newsletter .section__head,
-#newsletter h3,
-#newsletter p,
-#newsletter ul,
-#newsletter li {
+.ml-embedded {
   position: relative;
-  z-index: 1;
+  z-index: 3;
+  width: 100%;
+  min-height: 240px;
 }
 
-#newsletter::before,
-#newsletter::after,
-#newsletter *::before,
-#newsletter *::after {
-  pointer-events: none;
-}
-#newsletter * {
-  outline: 1px solid rgba(255, 0, 0, 0.15);
+.ml-embedded iframe {
+  display: block;
+  width: 100% !important;
+  min-height: 240px;
+  border: 0 !important;
 }
