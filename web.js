@@ -30,5 +30,37 @@ if (privacyLink && privacyModal) {
   privacyLink.addEventListener("click", (e) => {
     e.preventDefault();
     privacyModal.showModal();
+    document.addEventListener("DOMContentLoaded", function () {
+  const mlBox = document.querySelector(".ml-embedded");
+
+  if (!mlBox) return;
+
+  document.addEventListener("submit", function (e) {
+    const form = e.target;
+
+    if (!mlBox.contains(form)) return;
+
+    const emailField = form.querySelector('input[type="email"], input[name="email"]');
+
+    if (!emailField) return;
+
+    const emailValue = emailField.value.trim();
+
+    if (!emailValue) {
+      e.preventDefault();
+      emailField.focus();
+      emailField.reportValidity?.();
+      return;
+    }
+
+    const emailValid = emailField.checkValidity ? emailField.checkValidity() : true;
+
+    if (!emailValid) {
+      e.preventDefault();
+      emailField.focus();
+      emailField.reportValidity?.();
+    }
+  }, true);
+});
   });
 }
