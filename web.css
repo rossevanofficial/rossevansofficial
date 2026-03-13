@@ -1566,3 +1566,71 @@ input[type="submit"]:active,
 .btn:active {
   transform: translateY(2px);
   transition: transform 0.05s;
+  /* =============================== */
+/* MailerLite Dark Theme Styling */
+/* =============================== */
+
+.ml-embedded {
+  background: transparent !important;
+}
+
+.ml-embedded form {
+  background: rgba(15,20,35,0.75) !important;
+  border: 1px solid rgba(214,181,106,0.25) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+}
+
+/* Title */
+.ml-embedded h2,
+.ml-embedded h3 {
+  color: #ffffff !important;
+}
+
+/* Text */
+.ml-embedded p,
+.ml-embedded label {
+  color: #bfc6d4 !important;
+}
+
+/* Email field */
+.ml-embedded input[type="email"] {
+  background: #0b0f19 !important;
+  border: 1px solid rgba(214,181,106,0.35) !important;
+  color: #ffffff !important;
+  padding: 0.6rem 0.75rem !important;
+  border-radius: 6px !important;
+}
+
+/* Placeholder text */
+.ml-embedded input::placeholder {
+  color: #7c8597 !important;
+}
+
+/* Subscribe button */
+.ml-embedded button,
+.ml-embedded input[type="submit"] {
+  background: linear-gradient(135deg,#d6b56a,#bfa055) !important;
+  border: none !important;
+  color: #0b0f19 !important;
+  font-weight: 700 !important;
+  padding: 0.65rem 1rem !important;
+  border-radius: 8px !important;
+  transition: all 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+/* Hover effect */
+.ml-embedded button:hover,
+.ml-embedded input[type="submit"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4) !important;
+}
+
+/* Click press effect */
+.ml-embedded button:active,
+.ml-embedded input[type="submit"]:active {
+  transform: translateY(1px) !important;
+}
+
+  
