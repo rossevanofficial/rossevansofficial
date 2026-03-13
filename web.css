@@ -724,3 +724,37 @@ input[type="submit"]:active,
     width: min(260px, calc(100vw - 40px));
   }
 }
+/* Newsletter click-fix */
+#newsletter,
+#newsletter .container,
+#newsletter .card,
+#newsletter .grid,
+#newsletter .newsletterBox,
+#newsletter .ml-embedded {
+  position: relative;
+}
+
+#newsletter .newsletterBox,
+#newsletter .ml-embedded,
+#newsletter .ml-embedded iframe {
+  z-index: 50;
+}
+
+#newsletter .section__head,
+#newsletter h3,
+#newsletter p,
+#newsletter ul,
+#newsletter li {
+  position: relative;
+  z-index: 1;
+}
+
+#newsletter::before,
+#newsletter::after,
+#newsletter *::before,
+#newsletter *::after {
+  pointer-events: none;
+}
+#newsletter * {
+  outline: 1px solid rgba(255, 0, 0, 0.15);
+}
