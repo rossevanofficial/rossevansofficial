@@ -1550,3 +1550,14 @@ input:focus, textarea:focus{
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+button,
+input[type="submit"],
+.btn {
+  cursor: pointer;
+}
+
+button:active,
+input[type="submit"]:active,
+.btn:active {
+  transform: translateY(1px);
+}
