@@ -1650,4 +1650,30 @@ input[type="submit"]:active,
   z-index: 20;
   pointer-events: auto !important;
 }
+/* Make decorative overlays unable to block clicks */
+.hero__fade,
+.section::before,
+.section::after,
+.card::before,
+.card::after {
+  pointer-events: none !important;
+}
+
+/* Make newsletter area sit above stray layers */
+.grid--newsletter,
+.newsletterBox,
+.ml-embedded,
+.ml-embedded iframe {
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+/* Make sure the actual form controls stay clickable */
+.ml-embedded button,
+.ml-embedded input,
+.ml-embedded input[type="submit"],
+.ml-embedded .g-recaptcha,
+.ml-embedded iframe {
+  pointer-events: auto !important;
+}
   
