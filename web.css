@@ -601,17 +601,15 @@ textarea:focus {
 /* MailerLite embed */
 .ml-embedded {
   width: 100%;
-  min-height: 240px;
+  min-height: 180px;
   display: block;
-  position: relative;
-  z-index: 3;
   background: transparent !important;
 }
 
 .ml-embedded iframe {
   width: 100% !important;
   max-width: 100% !important;
-  min-height: 240px;
+  min-height: 180px;
   border: 0 !important;
   display: block;
   background: transparent;
