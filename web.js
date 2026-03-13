@@ -64,3 +64,37 @@ if (privacyLink && privacyModal) {
 });
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener(
+    "submit",
+    function (e) {
+      const form = e.target;
+
+      if (!form.closest(".ml-embedded")) return;
+
+      const emailField = form.querySelector('input[type="email"], input[name="email"]');
+
+      if (!emailField) return;
+
+      const emailValue = emailField.value.trim();
+
+      if (!emailValue) {
+        e.preventDefault();
+        emailField.focus();
+        if (typeof emailField.reportValidity === "function") {
+          emailField.reportValidity();
+        }
+        return;
+      }
+
+      if (typeof emailField.checkValidity === "function" && !emailField.checkValidity()) {
+        e.preventDefault();
+        emailField.focus();
+        if (typeof emailField.reportValidity === "function") {
+          emailField.reportValidity();
+        }
+      }
+    },
+    true
+  );
+});
