@@ -1676,4 +1676,42 @@ input[type="submit"]:active,
 .ml-embedded iframe {
   pointer-events: auto !important;
 }
-  
+  .btn--shop{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d6b56a, #f0d48a);
+  color: #0b0f19;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(240, 212, 138, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 10px 24px rgba(0,0,0,0.28),
+    0 0 18px rgba(214,181,106,0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn--shop:hover,
+.btn--shop:focus-visible{
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08) inset,
+    0 14px 28px rgba(0,0,0,0.34),
+    0 0 24px rgba(214,181,106,0.34);
+}
+
+.btn--shop:active{
+  transform: translateY(0);
+}
+
+.btn--shop::before{
+  content: "↗";
+  font-size: 0.95rem;
+  margin-right: 0.45rem;
+  line-height: 1;
+}
