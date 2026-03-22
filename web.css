@@ -362,13 +362,33 @@ h1{
 }
 
 .book__cover{
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.04);
-  overflow:hidden;
-  aspect-ratio: 3 / 4;
-  display:grid;
-  place-items:center;
+  padding: 14px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.book__cover a,
+.book__cover .progress-trigger-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.book__cover img{
+  display: block;
+  max-width: 100%;
+  max-height: 390px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
 }
 
 .cover__fallback{
