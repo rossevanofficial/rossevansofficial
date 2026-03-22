@@ -1105,3 +1105,16 @@ document.addEventListener("keydown", (e) => {
     closeProgressModal();
   }
 });
+const shopToggle = document.getElementById("shopToggle");
+const shopMenu = document.getElementById("shopMenu");
+
+if (shopToggle && shopMenu) {
+  shopToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    shopToggle.parentElement.classList.toggle("open");
+  });
+
+  document.addEventListener("click", () => {
+    shopToggle.parentElement.classList.remove("open");
+  });
+}
