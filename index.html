@@ -68,21 +68,22 @@
       </button>
 
       <nav class="nav" id="nav">
-        <a href="#books">Books</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#about">About</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="#contact">Contact</a>
+  <a href="#books">Books</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#about">About</a>
+  <a href="#newsletter">Newsletter</a>
+  <a href="#contact">Contact</a>
 
-        <a
-          class="btn btn--sm btn--shop"
-          href="https://www.amazon.com/dp/B0G4B44363"
-          target="_blank"
-          rel="noopener"
-          aria-label="Buy Trading Existence Awakening on Amazon"
-        >Shop Now</a>
+  <a
+    class="btn btn--sm btn--shop"
+    href="https://www.amazon.com/dp/B0G4B44363"
+    target="_blank"
+    rel="noopener"
+    aria-label="Buy Trading Existence Awakening on Amazon"
+  >Shop Now</a>
 
-        <a class="btn btn--sm btn--ghost" href="#books">Start Here</a>
+  <a class="btn btn--sm btn--ghost" href="#books">Start Here</a>
+</nav>
       </nav>
     </div>
   </header>
@@ -184,41 +185,24 @@
                 A collision of worlds. A legacy of power. And a fight to decide who gets to
                 exist when reality fractures.
               </p>
-              <div class="book__links">
-                <a class="btn btn--sm" href="https://books2read.com/u/4EVYg0" target="_blank" rel="noopener">📚 Buy Everywhere</a>
-                <a class="btn btn--sm" href="https://a.co/d/dh08l4d" target="_blank" rel="noopener">Amazon</a>
-                <a class="btn btn--sm btn--ghost" href="https://www.goodreads.com/author/show/66868808.Ross_Evans" target="_blank" rel="noopener">Goodreads</a>
-              </div>
+             <div class="book__links">
+  <a class="btn btn--sm" href="https://books2read.com/u/4EVYg0" target="_blank" rel="noopener">📚 Buy Everywhere</a>
+  <a class="btn btn--sm" href="https://a.co/d/dh08l4d" target="_blank" rel="noopener">Amazon</a>
+  <a class="btn btn--sm btn--ghost" href="https://www.goodreads.com/author/show/66868808.Ross_Evans" target="_blank" rel="noopener">Goodreads</a>
+</div>
             </div>
           </article>
 
           <!-- BOOK 2 -->
           <article class="book card">
             <div class="book__cover">
-              <div class="progress-trigger-wrap">
-                <a
-                  href="https://rossevansofficial.github.io/redemption/"
-                  rel="noopener"
-                  class="progress-trigger-link"
-                  aria-label="Open Redemption page"
-                >
-                  <img
-                    src="assets/Redemption Book Cover (2).png"
-                    alt="Redemption cover"
-                    onerror="this.style.display='none'; this.parentElement.parentElement.classList.add('cover--fallback');"
-                  />
-                </a>
-
-                <div
-                  class="progress-click-text"
-                  id="progressTrigger"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Click to see Redemption progress"
-                >
-                  Click to see progress
-                </div>
-              </div>
+              <a href="https://rossevansofficial.github.io/redemption/" rel="noopener">
+                <img
+                  src="assets/Redemption Book Cover (2).png"
+                  alt="Redemption cover"
+                  onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
+                />
+              </a>
               <div class="cover__fallback" aria-hidden="true">Book 2 Cover</div>
             </div>
 
@@ -462,32 +446,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Redemption Progress Modal -->
-  <div class="progress-modal" id="progressModal" aria-hidden="true">
-    <div class="progress-modal-content">
-      <button class="progress-close" id="progressClose" aria-label="Close progress popup">&times;</button>
-
-      <div class="progress-container">
-        <h3>Redemption Progress</h3>
-        <p class="progress-sub">A story forged step by step.</p>
-
-        <div class="progress-meta">
-          <div class="progress-stat">
-            <span class="progress-stat__label">Word Count</span>
-            <span class="progress-stat__value" id="progressWordCount">12,000 / 120,000 words</span>
-          </div>
-
-          <div class="progress-stat">
-            <span class="progress-stat__label">Release Target</span>
-            <span class="progress-stat__value" id="progressTargetDate">Target: 2026</span>
-          </div>
-        </div>
-
-        <div id="progressList"></div>
-      </div>
-    </div>
-  </div>
 
   <!-- Simple privacy modal -->
   <dialog class="modal" id="privacyModal">
