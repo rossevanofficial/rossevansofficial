@@ -971,3 +971,26 @@ input[type="submit"]:active,
     grid-template-columns:1fr;
   }
 }
+.book__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: transparent;
+  border-radius: 24px;
+  overflow: visible; /* was likely hidden */
+}
+
+.book__cover a,
+.book__cover .progress-trigger-wrap {
+  display: block;
+  width: 100%;
+}
+
+.book__cover img {
+  display: block;
+  width: 100%;
+  height: auto;          /* keeps full cover visible */
+  object-fit: contain;   /* prevents cropping */
+  border-radius: 20px;
+}
