@@ -224,3 +224,35 @@ document.addEventListener("keydown", function (e) {
     closeStatusModal();
   }
 });
+/* Review Modal */
+const reviewCards = document.querySelectorAll(".review");
+const reviewModal = document.getElementById("reviewModal");
+const reviewModalText = document.getElementById("reviewModalText");
+const reviewModalClose = document.getElementById("reviewModalClose");
+
+if (reviewCards.length && reviewModal && reviewModalText && reviewModalClose) {
+  reviewCards.forEach((card) => {
+    const btn = card.querySelector(".review-read-more");
+    const fullText = card.getAttribute("data-full-review");
+
+    if (btn && fullText) {
+      btn.addEventListener("click", () => {
+        reviewModalText.textContent = fullText;
+        reviewModal.classList.add("is-open");
+        reviewModal.setAttribute("aria-hidden", "false");
+      });
+    }
+  });
+
+  reviewModalClose.addEventListener("click", () => {
+    reviewModal.classList.remove("is-open");
+    reviewModal.setAttribute("aria-hidden", "true");
+  });
+
+  reviewModal.addEventListener("click", (e) => {
+    if (e.target === reviewModal) {
+      reviewModal.classList.remove("is-open");
+      reviewModal.setAttribute("aria-hidden", "true");
+    }
+  });
+}
