@@ -210,16 +210,24 @@
 
           <!-- BOOK 2 -->
           <article class="book card">
-            <div class="book__cover">
-              <a href="https://rossevansofficial.github.io/redemption/" rel="noopener">
-                <img
-                  src="assets/Redemption Book Cover (2).png"
-                  alt="Redemption cover"
-                  onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
-                />
-              </a>
-              <div class="cover__fallback" aria-hidden="true">Book 2 Cover</div>
-            </div>
+           <div class="book__cover">
+  <button
+    class="cover-trigger"
+    type="button"
+    data-status-title="Redemption"
+    data-status-phase="Coming Soon"
+    data-status-wordcount="12,000 / 120,000 words"
+    data-status-target="Target Release: 2026"
+    data-status-summary="Marked by fire and bound by fate, Freya stands at the center of a broken balance. Redemption is currently in active drafting."
+  >
+    <img
+      src="assets/Redemption Book Cover (2).png"
+      alt="Redemption cover"
+      onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
+    />
+  </button>
+  <div class="cover__fallback" aria-hidden="true">Book 2 Cover</div>
+</div>
 
             <div class="book__body">
               <h3>Redemption</h3>
@@ -240,15 +248,23 @@
           <!-- BOOK 3 -->
           <article class="book card">
             <div class="book__cover">
-              <a href="#newsletter" rel="noopener">
-                <img
-                  src="assets/covers/Trading-Existence-Fractured-Realms.png"
-                  alt="Trading Existence: Fractured Realms cover"
-                  onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
-                />
-              </a>
-              <div class="cover__fallback" aria-hidden="true">Book 3 Cover</div>
-            </div>
+  <button
+    class="cover-trigger"
+    type="button"
+    data-status-title="Trading Existence: Fractured Realms"
+    data-status-phase="Coming 2026"
+    data-status-wordcount="Pre-production / outlining"
+    data-status-target="Planned Release: Late 2026"
+    data-status-summary="The third Trading Existence book is in development. Worldbuilding, planning, and series progression are underway."
+  >
+    <img
+      src="assets/covers/Trading-Existence-Fractured-Realms.png"
+      alt="Trading Existence: Fractured Realms cover"
+      onerror="this.style.display='none'; this.parentElement.classList.add('cover--fallback');"
+    />
+  </button>
+  <div class="cover__fallback" aria-hidden="true">Book 3 Cover</div>
+</div>
 
             <div class="book__body">
               <h3>Trading Existence: Fractured Realms</h3>
@@ -476,6 +492,19 @@
     </div>
   </dialog>
 
+  <div class="status-modal" id="statusModal" aria-hidden="true">
+  <div class="status-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
+    <button class="status-modal__close" id="statusModalClose" type="button" aria-label="Close status popup">
+      ×
+    </button>
+
+    <h3 id="statusModalTitle">Book Status</h3>
+    <p class="status-modal__phase" id="statusModalPhase"></p>
+    <p class="status-modal__meta" id="statusModalWordCount"></p>
+    <p class="status-modal__meta" id="statusModalTarget"></p>
+    <p class="status-modal__summary" id="statusModalSummary"></p>
+  </div>
+</div>
   <script src="web.js"></script>
 
   <!-- MailerLite Universal -->
