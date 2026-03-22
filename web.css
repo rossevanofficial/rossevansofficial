@@ -1741,56 +1741,23 @@ input[type="submit"]:active,
 }
 
 .shop-menu {
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background: rgba(15, 18, 28, 0.98);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  padding: 8px 0;
-  min-width: 160px;
   display: none;
-  z-index: 1000;
-}
-
-.shop-menu a {
-  display: block;
-  padding: 10px 14px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.shop-menu a:hover {
-  background: rgba(255,255,255,0.08);
-}
-
-.shop-dropdown.open .shop-menu {
-  display: block;
-}
-.shop-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.shop-menu {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
   min-width: 180px;
-  padding: 8px 0;
-  border-radius: 12px;
+  background: rgba(11, 15, 25, 0.98);
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(11,15,25,.98);
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,.28);
-  display: none;
-  z-index: 1000;
+  overflow: hidden;
+  z-index: 9999;
 }
 
 .shop-menu a {
   display: block;
   padding: 10px 14px;
-  color: inherit;
+  color: #fff;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -1803,14 +1770,13 @@ input[type="submit"]:active,
   display: block;
 }
 
-/* Mobile: let dropdown sit naturally inside the menu */
 @media (max-width: 860px) {
   .shop-dropdown {
     display: block;
     width: 100%;
   }
 
-  .shop-dropdown .btn--shop {
+  .shop-dropdown > .btn {
     width: 100%;
   }
 
