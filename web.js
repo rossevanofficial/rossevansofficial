@@ -172,3 +172,55 @@ document.addEventListener("click", function () {
     shopToggle.setAttribute("aria-expanded", "false");
   }
 });
+/* Book status popup */
+const coverTriggers = document.querySelectorAll(".cover-trigger");
+const statusModal = document.getElementById("statusModal");
+const statusModalClose = document.getElementById("statusModalClose");
+const statusModalTitle = document.getElementById("statusModalTitle");
+const statusModalPhase = document.getElementById("statusModalPhase");
+const statusModalWordCount = document.getElementById("statusModalWordCount");
+const statusModalTarget = document.getElementById("statusModalTarget");
+const statusModalSummary = document.getElementById("statusModalSummary");
+
+function openStatusModal(trigger) {
+  if (!statusModal) return;
+
+  statusModalTitle.textContent = trigger.dataset.statusTitle || "Book Status";
+  statusModalPhase.textContent = trigger.dataset.statusPhase || "";
+  statusModalWordCount.textContent = trigger.dataset.statusWordcount || "";
+  statusModalTarget.textContent = trigger.dataset.statusTarget || "";
+  statusModalSummary.textContent = trigger.dataset.statusSummary || "";
+
+  statusModal.classList.add("active");
+  statusModal.setAttribute("aria-hidden", "false");
+}
+
+function closeStatusModal() {
+  if (!statusModal) return;
+  statusModal.classList.remove("active");
+  statusModal.setAttribute("aria-hidden", "true");
+}
+
+coverTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", function () {
+    openStatusModal(trigger);
+  });
+});
+
+if (statusModalClose) {
+  statusModalClose.addEventListener("click", closeStatusModal);
+}
+
+if (statusModal) {
+  statusModal.addEventListener("click", function (e) {
+    if (e.target === statusModal) {
+      closeStatusModal();
+    }
+  });
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && statusModal && statusModal.classList.contains("active")) {
+    closeStatusModal();
+  }
+});
