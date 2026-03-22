@@ -1735,3 +1735,36 @@ input[type="submit"]:active,
   margin-right: 0.45rem;
   line-height: 1;
 }
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.shop-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: rgba(15, 18, 28, 0.98);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 160px;
+  display: none;
+  z-index: 1000;
+}
+
+.shop-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.shop-menu a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.shop-dropdown.open .shop-menu {
+  display: block;
+}
