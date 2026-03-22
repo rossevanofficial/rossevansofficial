@@ -241,7 +241,7 @@
 
               <div class="book__links">
                 <a class="btn btn--sm btn--ghost" href="#newsletter">Get Updates</a>
-                <a class="btn btn--sm" href="redemptionofficial.com">Details</a>
+                <a class="btn btn--sm" href="https://redemptionofficial.com" target="_blank" rel="noopener">Details</a>
               </div>
             </div>
           </article>
@@ -494,11 +494,12 @@
     </div>
   </dialog>
 
-  <div class="status-modal" id="statusModal" aria-hidden="true">
-  <div class="status-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
-    <button class="status-modal__close" id="statusModalClose" type="button" aria-label="Close status popup">
-      ×
-    </button>
+ <div class="review-modal" id="reviewModal" aria-hidden="true">
+  <div class="review-modal__dialog" role="dialog" aria-modal="true">
+    <button class="review-modal__close" id="reviewModalClose" type="button">×</button>
+    <p id="reviewModalText"></p>
+  </div>
+</div>
 
     <h3 id="statusModalTitle">Book Status</h3>
     <p class="status-modal__phase" id="statusModalPhase"></p>
