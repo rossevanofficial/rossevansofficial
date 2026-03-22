@@ -1827,3 +1827,70 @@ input[type="submit"]:active,
     width: 100%;
   }
 }
+.cover-trigger {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.cover-trigger img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.status-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 14, 0.72);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10000;
+}
+
+.status-modal.active {
+  display: flex;
+}
+
+.status-modal__dialog {
+  position: relative;
+  width: min(560px, 100%);
+  padding: 28px 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(11,15,25,.98);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+
+.status-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.status-modal__phase {
+  margin: 8px 0 10px;
+  font-weight: 700;
+}
+
+.status-modal__meta {
+  margin: 6px 0;
+  color: rgba(255,255,255,.78);
+}
+
+.status-modal__summary {
+  margin-top: 14px;
+  line-height: 1.6;
+}
