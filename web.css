@@ -1941,3 +1941,41 @@ input[type="submit"]:active,
   font-size: 1.8rem;
   cursor: pointer;
 }
+.book__cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-link {
+  display: block;
+  position: relative;
+}
+
+.cover-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* HIDDEN by default */
+.book-status-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 15, 25, 0.92);
+  color: #fff;
+  padding: 1rem;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none; /* prevents blocking clicks */
+
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+
+/* ONLY show on hover */
+.book__cover:hover .book-status-overlay {
+  opacity: 1;
+  visibility: visible;
+}
