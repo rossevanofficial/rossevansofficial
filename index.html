@@ -33,33 +33,71 @@
     window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init()
   </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ross Evans",
-    "url": "https://rossevansofficial.com",
-    "jobTitle": "Author",
-    "sameAs": [
-      "https://www.amazon.com/stores/Ross-Evans/author/B0G4JBNWC1?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=78cbca2f-8a8c-4a55-b144-24e5eef1be21",
-      "https://www.goodreads.com/author/show/66868808.Ross_Evans",
-      "https://www.instagram.com/trading_existence/",
-      "https://www.facebook.com/profile.php?id=61580831830637"
-    ]
-  }
-  </script>
-  <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://rossevansofficial.com/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-</urlset>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://rossevansofficial.com/#author",
+      "name": "Ross Evans",
+      "url": "https://rossevansofficial.com/",
+      "jobTitle": "Author",
+      "image": "https://rossevansofficial.com/assets/headshot.jpg",
+      "sameAs": [
+        "https://www.amazon.com/stores/Ross-Evans/author/B0G4JBNWC1",
+        "https://www.goodreads.com/author/show/66868808.Ross_Evans",
+        "https://www.instagram.com/trading_existence/",
+        "https://www.facebook.com/profile.php?id=61580831830637"
+      ]
+    },
+    {
+      "@type": "BookSeries",
+      "@id": "https://rossevansofficial.com/#trading-existence",
+      "name": "Trading Existence",
+      "author": {
+        "@id": "https://rossevansofficial.com/#author"
+      },
+      "url": "https://tradingexistence.com/"
+    },
+    {
+      "@type": "Book",
+      "@id": "https://rossevansofficial.com/#awakening",
+      "name": "Trading Existence: Awakening",
+      "author": {
+        "@id": "https://rossevansofficial.com/#author"
+      },
+      "url": "https://tradingexistence.com/",
+      "genre": [
+        "Epic Fantasy",
+        "Science Fantasy"
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://rossevansofficial.com/#redemption",
+      "name": "Redemption",
+      "author": {
+        "@id": "https://rossevansofficial.com/#author"
+      },
+      "url": "https://redemptionofficial.com/",
+      "genre": [
+        "Dark Fantasy"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rossevansofficial.com/#website",
+      "url": "https://rossevansofficial.com/",
+      "name": "Ross Evans Official",
+      "publisher": {
+        "@id": "https://rossevansofficial.com/#author"
+      }
+    }
+  ]
+}
+</script>
+  
 </head>
 
 <body>
